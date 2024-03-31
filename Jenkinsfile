@@ -59,7 +59,7 @@ pipeline {
           sh '''
             ssh -o StrictHostKeyChecking=no ubuntu@43.203.217.53 "
                 cd /home/ubuntu/back/backend &&
-                ./gradlew build &&
+                ./gradlew build > /path/to/java.log 2>&1 &&
                 mv ./build/libs/backend-0.0.1-SNAPSHOT.jar ../
               "
           '''
